@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
    root to:  "products#show"
-   resources :product
+   resources :product do
+    resources :description
+    resources :image_url
+    resources :destination_url
+    resources :brand
+  end
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

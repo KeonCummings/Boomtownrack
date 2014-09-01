@@ -17,8 +17,9 @@
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic|Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
     <%= stylesheet_link_tag 'style' %>
     <%= stylesheet_link_tag 'colors/default' %>
-    <%= stylesheet_link_tag 'javascripts/fancybox/source/jquery.fancybox' %>
-    <%= javascript_include_tag "modernizr" %>
+    <%= stylesheet_link_tag 'jquery.fancybox' %>
+    <script> <%= javascript_include_tag "modernizr" %> </script>
+
 
 </script>
 </head>
@@ -79,54 +80,58 @@
         </nav>
     </header>
 
-<%= yield %>
+    <%= yield %>
 
-</body>
-<footer id="footer">
+
+<!-- 		<footer id="footer">
             <div class="wrap group">
                 <div class="footer-text">
                     <a href="#">Pinfinity</a> &mdash; A Pinterest like site template.
                 </div>
             </div>
-        </footer>
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-<%= javascript_include_tag "superfish" %>
-<%= javascript_include_tag "isotype" %>
-<%= javascript_include_tag "fitvids" %>
-<%= javascript_include_tag "fancybox/source/jquery.fancybox.pack" %>
-<%= javascript_include_tag "jquery.flexslider-min" %>
-<%= javascript_include_tag "jquery.formLabels1.0" %>
-<%= javascript_include_tag "jquery.jplayer" %>
-<%= javascript_include_tag "jquery.ias.min" %>
+       </footer>
+   </div> -->
 
+<script> <%= javascript_include_tag "superfish" %> </script>
+<script> <%= javascript_include_tag "isotope" %> </script>
+<script> <%= javascript_include_tag "jquery.fitvids" %> </script>
+<script> <%= javascript_include_tag "fancybox/source/jquery.fancybox.pack" %> </script>
+<script> <%= javascript_include_tag "jquery.flexsider-min" %> </script>
+<script> <%= javascript_include_tag "jquery.formLabels1.0" %> </script>
+<script> <%= javascript_include_tag "jquery.jplayer" %> </script>
+<script> <%= javascript_include_tag "jquery.ias.min" %> </script>
 
 
 <!--[if (gte IE 6)&(lte IE 8)]><script type="text/javascript" src="js/selectivizr-min.js"></script><![endif]-->
-<%= javascript_include_tag "scripts" %>
+<script defer> <%= javascript_include_tag "scripts" %> </script>
 
-// <script type="text/javascript">
-// jQuery.ias({
-//     container   : "#entry-listing",
-//     item        : ".entry",
-//     pagination  : ".nav",
-//     next        : "#nextpage",
-//     loader  : "images/ajax-loa	der.gif",
-//     onRenderComplete: function(items) {
-//       var $newElems = jQuery(items).addClass("newItem");
 
-//       $newElems.hide().imagesLoaded(function(){
-//         if( jQuery(".flexslider").length > 0) {
-//           jQuery(".flexslider").flexslider({
-//             'controlNav': true,
-//             'directionNav': true
-//           });
-//         }
-//         jQuery(this).show();
-//         jQuery('#infscr-loading').fadeOut('normal');
-//         jQuery("#entry-listing").isotope('appended', $newElems );
-//         loadAudioPlayer();
-//       });
-//     }
-//     });
-//     </script>
+<script type="text/javascript">
+jQuery.ias({
+    container   : "#entry-listing",
+    item        : ".entry",
+    pagination  : ".nav",
+    next        : "#nextpage",
+    loader  : "images/ajax-loader.gif",
+    onRenderComplete: function(items) {
+      var $newElems = jQuery(items).addClass("newItem");
+
+      $newElems.hide().imagesLoaded(function(){
+        if( jQuery(".flexslider").length > 0) {
+          jQuery(".flexslider").flexslider({
+            'controlNav': true,
+            'directionNav': true
+          });
+        }
+        jQuery(this).show();
+        jQuery('#infscr-loading').fadeOut('normal');
+        jQuery("#entry-listing").isotope('appended', $newElems );
+        loadAudioPlayer();
+      });
+    }
+    });
+    </script>
+
+ </body>
+<!--[if (gte IE 6)&(lte IE 8)]><script type="text/javascript" src="js/selectivizr-min.js"></script><![endif]-->
 </html>

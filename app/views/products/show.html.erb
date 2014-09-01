@@ -1,19 +1,49 @@
-<body>
-    <div id="page">
-        
-
-                    <article id="post-215" class="post-215 category-people category-photography category-pretty-girls entry box format-image">
-                        <div class="entry-content-cnt">
-                            <div class="entry-content">
-                                <a href="images/dummy/Fotolia_34084826_Subscription_XL-680x1024.jpg" class="thumb" data-lightbox="fancybox[215]" title=""><img src="images/dummy/Fotolia_34084826_Subscription_XL-500x752.jpg" class="attachment-ci_listing_thumb" alt="High fashion model in autumn/winter clothes wearing sunglasses" title="High fashion model in autumn/winter clothes wearing sunglasses"></a>
+<div id="page">  
+  <section id="main">      
+        <div class="wrap group"> 
+             <div id="box-container">
+                <div id="entry-listing" class="group">
+                    <% @tops.each do |top| %>                    
+                        <article id="post-215" class="post-215 category-people category-photography category-pretty-girls entry box format-image">
+                            <div class="entry-content-cnt">
+                                <div class="entry-content">
+                                    <a href= <%= "http://www.ceratoboutique.com" + top.destination_url %> class="thumb" data-lightbox="fancybox[215]" title=""><img src=<%= "http:" + top.image_url %> class="attachment-ci_listing_thumb" alt="High fashion model in autumn/winter clothes wearing sunglasses" title= <%= top.description %> > </a>
+                                </div>
                             </div>
-                        </div>
 
-                    </div><!-- #entry-listing -->
+                            <div class="entry-desc">
+                                <h1><a href= <%= "http://www.ceratoboutique.com" + top.destination_url %> title="Permalink to High fashion model in autumn/winter clothes wearing sunglasses."><%= top.description %></a></h1>
 
-                    <div class="nav">
-                        <a id="nextpage" href="content1.html">Next Page</a>
-                    </div>
-              
-</body>
-</html>
+                                <div class="entry-meta group">
+                                    <a class="comments-no" href="#">4</a> <a data-post-id="215" class="heart-this loved" href="#" title= top.store ><span class= ><%= top.store %> </span></a> <a class="entry-permalink" href= <%= "http://www.ceratoboutique.com" + top.destination_url %> title="Permalink to High fashion model in autumn/winter clothes wearing sunglasses.">High fashion model in autumn/winter clothes wearing sunglasses.</a>
+                                </div>
+                            </div>
+                        </article>
+                    <%end%>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+
+
+<!-- <div id="page">  
+  <section id="main">      
+        <div class="wrap group"> 
+             <div id="box-container">
+                <div id="entry-listing" class="group">
+                    <% @tops.each do |top| %> 
+                    <article id="post-170" class="post-170 category-blog-posts entry box format-image">
+                            <div class="entry-content-cnt">
+                                <div class="entry-content">
+                                    <a href="images/dummy/res22-794x1024.jpg" class="thumb" data-lightbox="fancybox[170]" title=""><img src= <%= "http:" + top.image_url %>class="attachment-ci_listing_thumb" alt="res22" title="res22"></a>
+                                </div>
+                            </div>
+                        </article>
+                    <%end%>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->

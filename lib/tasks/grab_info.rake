@@ -7,7 +7,7 @@ namespace :grab_info do
   doc = Nokogiri::HTML(open("http://ceratoboutique.com/collections/tops"))
 
   prices = Array.new 
-  decriprition = Array.new
+  description = Array.new
   brands = Array.new
   #sale_price = Array.new
   image_url = Array.new
@@ -18,6 +18,7 @@ namespace :grab_info do
   brands = doc.xpath("//span[contains(@class,'vendor')]").collect {|node| node.text.strip}
   #sale_price = doc.xpath("//span[contains(@class, 'price')]/text()").collect {|node| node.text.strip}
   image_url = doc.xpath("//div/a/img/@src").collect {|node| node.text.strip}
+  image_url.shift
   destination_url = doc.css('div.details a').map { |link| link['href'] }.collect 
 
   prices.zip(description, brands, image_url, destination_url).each do |prices, description, brands, image, url|
