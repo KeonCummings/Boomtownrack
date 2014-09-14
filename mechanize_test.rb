@@ -5,7 +5,7 @@
 
    # agent = Mechanize.new
   
-   # url = ("http://zamrie.com/collections/tops")
+   # url = "http://ceratoboutique.com/collections/tops"
    # doc = Nokogiri::HTML(open(url))
    # page = agent.get(url)
   
