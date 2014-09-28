@@ -1,82 +1,25 @@
 <% product = @products %>
 
-<% article_ids = ["post-215" => "post-215 category-people category-photography category-pretty-girls entry box format-image", "post-207" => "post-207 category-people category-photography entry box format-image" , "post-210" => "post-210 category-blog-posts entry box format-image"] %> 
-
-<div id="page">  
-  <section id="main">      
-        <div class="wrap group"> 
-             <div id="box-container">
-                <div id="entry-listing" class="group">
-                    <article class="entry box isotope-item" id="intro">
-                            <div class="entry-content-cnt">
-                                <aside class="widget widget_ci_about_widget group">
-                                    <h3 class="widget-title">Who I am</h3>
-
-                                    <div class="widget_about group">
-                                        <img alt="about me" class="alignleft" src="images/dummy/me.jpg">
-
-                                        <p>Hello, I am <strong>Pinfinity</strong>, a Pinterest-like infinite scrolling site template that supports multiple entry formats like <strong>Blog Posts, Images, Photo Galleries, Videos and Quotes</strong> in a very cool way.</p>
-
-                                        <p>I'm also <strong>responsive</strong>, meaning that I will behave in every resolution and all mobile devices perfectly!</p>
-
-                                        <p>Try me out!</p>
-                                    </div>
-                                </aside>
-
-                                <aside class="widget widget_ci_twitter_widget group">
-                                    <h3 class="widget-title">Recent tweets</h3>
-
-                                    <div id="twitter_update_list">
-                                        <ul>
-                                            <li><span>@<a href="#">handle</a> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere tortor :)</span> <a href="#" class="twitter-time">about 6 hours ago</a></li>
-
-                                            <li><span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere tortor. <a href="#">http://www.example.com</a></span> <a href="#" class="twitter-time">about 11 hours ago</a></li>
-                                        </ul>
-                                    </div>
-                                </aside>
-                            </div>
-                        </article><!-- #intro -->
-                    <% product.each do |product| %>                    
-                        <article id="post-207" class="post-207 category-people category-photography entry box format-image">
-                            <div class="entry-content-cnt">
-                                <div class="entry-content">
-                                    <a href= <%= "http://www.ceratoboutique.com" + product.destination_url %> class="thumb" data-lightbox="fancybox[215]" title=""><img src=<%= "http:" + product.image_url %> class="attachment-ci_listing_thumb" alt="High fashion model in autumn/winter clothes wearing sunglasses" title= <%= product.description %> > </a>
-                                </div>
-                            </div>
-
-                            <div class="entry-desc">
-                                <h1><a href= <%= "http://www.ceratoboutique.com" + product.destination_url %> title="Permalink to High fashion model in autumn/winter clothes wearing sunglasses."><%= product.description %></a></h1>
-
-                                <div class="entry-meta group">
-                                    <a class="comments-no" href="#">4</a> <a data-post-id="215" class="heart-this loved" href="#" title= product.store ><span class= ><%= product.store %> </span></a> <a class="entry-permalink" href= <%= "http://www.ceratoboutique.com" + product.destination_url %> title="Permalink to High fashion model in autumn/winter clothes wearing sunglasses.">High fashion model in autumn/winter clothes wearing sunglasses.</a>
-                                </div>
-                            </div>
-                        </article>
-                    <%end%>
+    <% product.each do |product| %>  
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <img src=<%= "http:" + product.image_url %>
+                <div class="caption">
+                    <h4 class="pull-right">$24.99</h4>
+                    <h4><a href= <%= "http://www.ceratoboutique.com" + product.destination_url %> 
+                    </h4>
+                    <p> <%= product.description %> <a target="_blank" href= <%= "http://www.ceratoboutique.com" + product.destination_url %> </a>.</p>
+                </div>
+                <div class="ratings">
+                    <p class="pull-right">15 reviews</p>
+                    <p>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                        <span class="glyphicon glyphicon-star"></span>
+                    </p>
                 </div>
             </div>
         </div>
-    </section>
-</div>
-
-
-
-<!-- <div id="page">  
-  <section id="main">      
-        <div class="wrap group"> 
-             <div id="box-container">
-                <div id="entry-listing" class="group">
-                    <% product.each do |top| %> 
-                    <article id="post-170" class="post-170 category-blog-posts entry box format-image">
-                            <div class="entry-content-cnt">
-                                <div class="entry-content">
-                                    <a href="images/dummy/res22-794x1024.jpg" class="thumb" data-lightbox="fancybox[170]" title=""><img src= <%= "http:" + top.image_url %>class="attachment-ci_listing_thumb" alt="res22" title="res22"></a>
-                                </div>
-                            </div>
-                        </article>
-                    <%end%>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> -->
+    <%end%>
