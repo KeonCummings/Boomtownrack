@@ -35,6 +35,15 @@
   page_num = 1
 
 
+    rake tops:cerato
+    rake accessories:cerato
+    rake jewelry:cerato
+    rake dresses:cerato
+    rake sweaters:cerato
+    rake pants:cerato
+
+
+
 
  # prices = page.search("#collection img")
  #  prices.each do |image|

@@ -1,11 +1,13 @@
 Rails.application.routes.draw do
-   root to:  "products#show"
-   resources :product do
-    resources :description
-    resources :image_url
-    resources :destination_url
-    resources :brand
-  end
+  root to:  "products#index"
+
+  get 'category/pants'
+
+  #  resources :product do
+  #   resources :brand
+  #   resources :category
+  #   resources :store
+  # end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
