@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
   root to:  "products#index"
 
-  get 'category/pants'
+  get '/category/pants' => 'category#pants'
+  get '/category/accessories' => 'category#accessories'
+  get '/category/dresses' => 'category#dresses'
+  get '/category/sweaters' => 'category#sweaters'
+  get '/category/jewelry' => 'category#jewelry'
+  get '/category/tops' => 'category#tops'
+
+
 
   #  resources :product do
   #   resources :brand

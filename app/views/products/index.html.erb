@@ -1,14 +1,14 @@
 <% product = @products %> 
     <% product.each do |product| %>
         <div class="col-sm-4 col-lg-4 col-md-4">
-            <div class="thumbnail"> 
-                <img src=<%= "http:" + product.image_url %>
+            <div class="thumbnail" style="max-height: 250px" > 
+                <img src= <%= "http:" + product.image_url %> style="max-height:100%;" >
                 <div class="caption">
                     <!-- <h4 class="pull-right">$24.99</h4> -->
-                    <h4><a href= <%= "http://www.ceratoboutique.com" + product.destination_url %> > <%= product.brand %>
+                    <h4><a href= <%= "http://www.ceratoboutique.com" + product.destination_url %> > <%= product.description %>
                     </a> 
                     </h4>
-                    <p> <%= product.description %> </p>
+                    <p> <%= product.brand%> </p>
                     <p> <%= product.store %> </p>
                 </div>
                 <div class="ratings">
@@ -22,8 +22,8 @@
                     </p>
                 </div>
             </div>
-            <%end%>
         </div>
+    <%end%>
         
     
      <!-- <div class="col-sm-4 col-lg-4 col-md-4">

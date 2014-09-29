@@ -19,4 +19,8 @@ class CategoryController < ApplicationController
 	def jewelry
 		@jewelry = Product.where(category: 'jewelry')
 	end
+
+	def tops
+		@tops = Product.where(category: 'tops')
+	end
 end
