@@ -1,0 +1,1 @@
+Boomtownrack::Application.config.secret_key_base = '8d086e963e17a0a21488b9214110b3eb78d8ee8d8ccef5578beb6151adbb0f93306b9a1db7a7aedb617ebcd84e1b531958594d04516c2c5dea866a3c3f043f3a'
