@@ -5,6 +5,20 @@
  */
 
 /*! normalize.css v3.0.1 | MIT License | git.io/normalize */
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
+}
+
 html {
   font-family: sans-serif;
   -webkit-text-size-adjust: 100%;
