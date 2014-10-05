@@ -1,27 +1,33 @@
-@import bootstrap
+@import "bootstrap";
 
-/* forms */
-
-#error_explanation {
-  color: #f00;
-  ul {
-    list-style: none;
-    margin: 0 0 18px 0;
-  }
+body {
+    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 }
 
-.field_with_errors {
-  @extend .control-group;
-  @extend .error;
+.hero-spacer {
+    margin-top: 50px;
 }
 
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 15px;
-  @include box_sizing;
+.hero-feature {
+    margin-bottom: 30px;
 }
 
-input {
-  height: auto !important;
+.hero-feature img {
+    max-height:100%;
+    max-width:100%;
 }
+
+.hero-feature h3{
+    max-height:100%;
+    max-width:100%;
+}
+
+.col-md-3 col-sm-6 hero-feature {
+	max-height:100%;
+    max-width:100%;
+}
+
+footer {
+    margin: 50px 0;
+}
+
