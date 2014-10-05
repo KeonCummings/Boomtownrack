@@ -27,31 +27,17 @@
      <!-- Navigation -->
         <!-- /.container -->
 
+        <!-- /.container -->
+
         <div class="container">
+
             <%= render "layouts/jumbotron" %>
-
-        <div class="row">
-
-            <div class="col-md-3">
-                <div class="list-group">
-                    <a class="list-group-item" <%= link_to 'Accessories', category_accessories_path %> </a>
-                    <a class="list-group-item" <%= link_to 'Dresses', category_dresses_path %> </a>
-                    <a class="list-group-item" <%= link_to 'Jewelry', category_jewelry_path %> </a>
-                    <a class="list-group-item" <%= link_to 'Pants', category_pants_path %> </a>
-                    <a class="list-group-item" <%= link_to 'Sweaters', category_sweaters_path %> </a>
-                    <a class="list-group-item" <%= link_to 'Tops', category_tops_path %> </a>
-                </div>
-            </div>
-
-            <div class="col-md-9">
-
+            <%= render "layouts/side_nav" %>
                
-    <%= yield %>
+                <%= yield %>
 
-</div>
-<!-- /.container -->
+        </div>
 
-    <div class="container">
 
         <hr>
 
@@ -64,7 +50,6 @@
         </div>
     </footer>
 
-    </div>
     <!-- /.container -->
 
  </body>
