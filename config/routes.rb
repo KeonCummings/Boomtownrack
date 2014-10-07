@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   root to:  "products#index"
 
+  resources :users
+  resources :products
+
   get '/signup' => 'users#new'
   get '/category/pants' => 'category#pants'
   get '/category/accessories' => 'category#accessories'
@@ -9,7 +12,7 @@ Rails.application.routes.draw do
   get '/category/jewelry' => 'category#jewelry'
   get '/category/tops' => 'category#tops'
 
-  resources :users
+  
 
 
   #  resources :product do
