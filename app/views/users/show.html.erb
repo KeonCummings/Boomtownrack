@@ -1,8 +1,5 @@
-    	<br> </br>
+
     	<div class="span3 well">
-        <% flash.each do |key, value| %>
-                <div class="alert alert-<%= key %>"><%= value %></div>
-        <% end %>
         <center>
         <a href="#aboutModal" data-toggle="modal"> <%= gravatar_for @user %> </a>
          <h3><%= @user.name %></h3>

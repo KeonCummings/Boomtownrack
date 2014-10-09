@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  root to:  "products#index"
+  root "products#index"
 
-  resources :users
-  resources :products
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/signup',  to: 'users#new',            via: 'get'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
 
-  get '/signup' => 'users#new'
   get '/category/pants' => 'category#pants'
   get '/category/accessories' => 'category#accessories'
   get '/category/dresses' => 'category#dresses'
@@ -12,14 +13,11 @@ Rails.application.routes.draw do
   get '/category/jewelry' => 'category#jewelry'
   get '/category/tops' => 'category#tops'
 
+  resources :users
+  resources :products
+
+
   
-
-
-  #  resources :product do
-  #   resources :brand
-  #   resources :category
-  #   resources :store
-  # end
 
 
   # The priority is based upon order of creation: first created -> highest priority.
