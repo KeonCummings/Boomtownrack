@@ -1,14 +1,9 @@
-<!--   <div class="row">
-            <div class="col-lg-12">
-                <h3>Latest Features</h3>
-            </div>
-        </div> -->
-        <!-- /.row -->
+   <%= render "layouts/jumbotron" %>
     <% product = @products.shuffle%> 
             <% product.each do |product| %>
-            <div class="col-md-3 col-sm-6 hero-feature" style="height: 500px">
+            <div class="col-md-3 col-sm-6 hero-feature" style="height: 450px">
                 <div class="thumbnail" >
-                    <img src= <%= "http:" + product.image_url %> style="height: 250px" >
+                    <img src= <%= "http:" + product.image_url %> style="height: 200px" >
                     <div class="caption">
 
                         <h3 style="height: 75px"><%= product.description %></h3>
@@ -16,8 +11,37 @@
                         <p> <%= product.store %> </p>
 
                         <p>
-                            <a href="#" class="btn btn-primary">Favorite</a> <a href= <%= "http://www.ceratoboutique.com" + product.destination_url %> class="btn btn-default">More Info</a>
+                            <% unless current_user?(@user) %>
+                                  <div id="follow_form">
+                                  <% if current_user.favorited?(product) %>
+                                    <%= form_for(current_user.favorites.find_by(product_id: product.id),
+                                                     html: { method: :delete }) do |f| %>
+                                          <%= f.submit "Unfollow", class: "btn btn-warning" %>
+                                          &nbsp;
+                                          <div align="center">    
+                                            <a href=  <%= "http://www.ceratoboutique.com" + product.destination_url %> class="btn btn-default">More Info</a>
+                                          </div>
+                                        <% end %>
+                                  <% else %>
+                                    <%= form_for(current_user.favorites.build(product_id: product.id)) do |f| %>
+                                         <div> <%= f.hidden_field :product_id %> </div>
+                                         <%= f.submit "Follow", class: "btn btn-success" %>
+                                         &nbsp; 
+                                         <div align="center">   
+                                          <a href=  <%= "http://www.ceratoboutique.com" + product.destination_url %> class="btn btn-default">More Info</a>
+                                     </div>
+                                <% end %>
+                                  <% end %>
+                                  </div>
+                                <% end %>
+                            
                         </p>
+                        <% if not signed_in? %>  
+                        <div align="center">  
+                        <a href=  <%= signin_path %> class="btn btn-success">Follow</a>  
+                        <a href=  <%= "http://www.ceratoboutique.com" + product.destination_url %> class="btn btn-default">More Info</a>
+                        </div>
+                        <% end %>
                     </div>
                 </div>
             </div>

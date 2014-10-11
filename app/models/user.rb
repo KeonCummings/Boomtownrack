@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_many :favorites, foreign_key: "user_id", dependent: :destroy
+  has_many :products, through: :favorites
+
   before_save { self.email = email.downcase }
   before_create :create_remember_token	
 
@@ -8,6 +11,18 @@ class User < ActiveRecord::Base
   									uniqueness: { case_sensitive: false }
   has_secure_password
 
+  def favorited?(product)
+    favorites.find_by(product_id: product.id)
+  end
+
+  def favorite!(product)
+    favorites.create!(product_id: product.id)
+  end
+
+  def unfavorite!(product)
+    favorites.find_by(product_id: product.id).destroy
+  end
+
   def User.new_remember_token
     SecureRandom.urlsafe_base64
   end
@@ -15,6 +30,7 @@ class User < ActiveRecord::Base
   def User.digest(token)
     Digest::SHA1.hexdigest(token.to_s)
   end
+
 
   private
 

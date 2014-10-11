@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root "products#index"
 
   resources :sessions, only: [:new, :create, :destroy]
+  resources :favorites, only: [:create, :destroy]
   match '/signup',  to: 'users#new',            via: 'get'
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
@@ -14,8 +15,12 @@ Rails.application.routes.draw do
   get '/category/tops' => 'category#tops'
 
   resources :users
-  resources :products
 
+  resources :products do
+     member do
+      get :users
+    end
+  end
 
   
 

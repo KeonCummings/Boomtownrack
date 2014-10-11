@@ -11,15 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141008062215) do
+ActiveRecord::Schema.define(version: 20141010185020) do
 
-  create_table "categories", force: true do |t|
-    t.string   "name"
+  create_table "favorites", force: true do |t|
+    t.integer  "product_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  add_index "favorites", ["product_id", "user_id"], name: "index_favorites_on_product_id_and_user_id", unique: true
+  add_index "favorites", ["product_id"], name: "index_favorites_on_product_id"
+  add_index "favorites", ["user_id"], name: "index_favorites_on_user_id"
+
   create_table "products", force: true do |t|
+    t.string   "category"
     t.string   "store"
     t.text     "description"
     t.string   "destination_url"
@@ -28,10 +34,7 @@ ActiveRecord::Schema.define(version: 20141008062215) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "brand"
-    t.integer  "category_id"
   end
-
-  add_index "products", ["category_id"], name: "index_products_on_category_id"
 
   create_table "users", force: true do |t|
     t.string   "name"

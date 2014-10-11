@@ -28,33 +28,21 @@
      <!-- Navigation -->
         <!-- /.container -->
 
-        <!-- /.container -->
-
         <div class="container">
-            <% flash.each do |key, value| %>
-            
-            <div class="alert alert-<%= key %>"><%= value %></div>
 
-            <% end %>
-            
-            <%= render "layouts/jumbotron" %>
-            <%= render "layouts/side_nav" %>
-               
-                <%= yield %>
 
+            <%= yield %>
+                
         </div>
 
-
+        <!-- /.container -->
         <hr>
-
     <!-- Footer -->
-    <footer>
-            <div class="col-lg-12">
-                <p>Copyright &copy; Boomtownrack.com 2014</p>
-            </div>
-    </footer>
-
-
+        <footer>
+                <div class="col-lg-12">
+                    <p>Copyright &copy; Boomtownrack.com 2014</p>
+                </div>
+        </footer>
 
     <!-- /.container -->
 
