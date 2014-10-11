@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   match '/signin',  to: 'sessions#new',         via: 'get'
   match '/signout', to: 'sessions#destroy',     via: 'delete'
 
+  get '/open' => 'products#open_url'
+
   get '/category/pants' => 'category#pants'
   get '/category/accessories' => 'category#accessories'
   get '/category/dresses' => 'category#dresses'

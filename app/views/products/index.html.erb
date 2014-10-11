@@ -37,10 +37,11 @@
                             
                         </p>
                         <% if not signed_in? %>  
-                        <div align="center">  
-                        <a href=  <%= signin_path %> class="btn btn-success">Follow</a>  
-                        <a href=  <%= "http://www.ceratoboutique.com" + product.destination_url %> class="btn btn-default">More Info</a>
-                        </div>
+                            <div align="center">  
+                            <a href=  <%= signin_path %> class="btn btn-success">Follow</a>  
+                            <%= link_to "More Info", product_path(product) %> 
+                            <%= @url.inspect %>
+                            </div>
                         <% end %>
                     </div>
                 </div>

@@ -24,6 +24,7 @@
 </head>
 
 <body>
+    <%= debug(params) if Rails.env.development? %>
     <%= render "layouts/navbar" %>
      <!-- Navigation -->
         <!-- /.container -->
@@ -43,6 +44,8 @@
                     <p>Copyright &copy; Boomtownrack.com 2014</p>
                 </div>
         </footer>
+
+
 
     <!-- /.container -->
 

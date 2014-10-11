@@ -6,6 +6,7 @@ gem 'rails', '4.0.8'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
+  gem 'pry'
 end
 
 gem 'pg', '0.15.1'
