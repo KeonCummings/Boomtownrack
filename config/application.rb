@@ -21,6 +21,5 @@ module Boomtownrack
     # config.i18n.default_locale = :de
     config.assets.precompile += %w(*.png *.jpg *.jpeg *.gif)
     config.action_dispatch.default_headers = { 'X-Frame-Options' => 'ALLOWALL' }
-    config.middleware.use Rack::SslEnforcer, :except_methods => ['GET']
   end
 end
