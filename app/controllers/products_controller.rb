@@ -11,6 +11,7 @@ class ProductsController < ApplicationController
 
 	def show
 		@product = Product.find(params[:id])
+		@products = Product.all
 		@url = Product.find(params[:id])
 		@signed_in = current_user
 	end

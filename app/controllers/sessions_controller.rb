@@ -1,6 +1,7 @@
 class SessionsController < ApplicationController
 	def new
 		@signed_in = current_user
+		@products = Product.all
 	end
 
 	def create

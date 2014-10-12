@@ -1,8 +1,12 @@
+
+
 <div class>
 <%= will_paginate %>
 </div>
 
       <% product = @products %> 
+      
+
             <% product.each do |product| %>
 
             <% if not signed_in? %>  
@@ -33,6 +37,7 @@
                                           </div>
                                         <% end %>
                                   <% else %>
+
                                     <%= form_for(current_user.favorites.build(product_id: product.id)) do |f| %>
                                          <div> <%= f.hidden_field :product_id %> </div>
                                          <%= f.submit "Follow", class: "btn btn-success" %>
@@ -40,6 +45,8 @@
                                          <div align="center">   
                                           <%= link_to "More Info", product_path(product), class: "btn btn-info" %>
                                          </div>
+                                        
+                                          
                                 <% end %>
                                   <% end %>
                                   </div>
@@ -47,9 +54,12 @@
                             
                         </p>
                         <% if not signed_in? %>  
+
                             <div align="center">  
                               <a href=  <%= signin_path %> class="btn btn-success">Follow</a>  
                               <%= link_to "More Info", product_path(product), class: "btn btn-default" %> 
+
+
                             </div>
                         <% end %>
                     </div>

@@ -5,17 +5,20 @@ class UsersController < ApplicationController
   def new
   	@user = User.new
     @signed_in = current_user
+    @products = Product.all
   end
 
   def show
   	@user = User.find(params[:id])
     @signed_in = current_user
+    @products = Product.all
     @products = @user.products.paginate(page: params[:page], per_page: 12)
   end
 
   def create
   	@user = User.new(user_params)
     @signed_in = current_user
+    @products = Product.all
   	if @user.save 
   		flash[:success] = "Welcome to Boomtownrack!"
   		redirect_to products_path
@@ -27,6 +30,7 @@ class UsersController < ApplicationController
 
   def edit
     @signed_in = current_user
+    @products = Product.all
   end
 
   def update
