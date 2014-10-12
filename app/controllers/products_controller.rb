@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
 
 	def index
 		@products = Product.all
+		@signed_in = current_user
 	end
 
 	def open_url
@@ -11,6 +12,7 @@ class ProductsController < ApplicationController
 	def show
 		@product = Product.find(params[:id])
 		@url = Product.find(params[:id])
+		@signed_in = current_user
 	end
 	
 end
