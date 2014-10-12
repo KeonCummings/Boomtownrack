@@ -7,3 +7,14 @@
 </div>
 
 
+
+<script>
+  // set onload on element
+  document.getElementsByTagName('iframe')[0].onload = function() {
+    alert('Frame element loaded')
+  }
+  // set onload on window
+  frames[0].onload = function() {
+    alert('Window loaded')
+  }
+</script>
