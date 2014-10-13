@@ -6,7 +6,17 @@
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
 
-            
+              <span class="btn pull-right" width= "90%">
+
+                        <%= link_to "Explore", product_path(shuffle), class: "btn btn-default navbar-btn " %>
+
+                <% if @url.present?%> 
+
+                        <%= link_to "Follow", signin_path, class: "btn btn-success" %>
+
+                <% end %>
+                  
+                    </span>
 
                 <span class="nav navbar-nav">                   
                     
@@ -32,17 +42,12 @@
 
                     </span>
 
-                    <span class="btn pull-right" width= "90%">
-
-                        <%= link_to "Explore", product_path(shuffle), class: "btn btn-default navbar-btn " %>
                   
-                    </span>
         
 
                     <% if @url.present?%> 
-
+                       
                         <% if current_user.favorited?(@product) %>
-
                                        
                                     <%= form_for(current_user.favorites.find_by(product_id: @product.id),
                                                      html: { method: :delete }) do |f| %>

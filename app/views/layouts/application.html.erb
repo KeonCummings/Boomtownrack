@@ -25,14 +25,13 @@
 
 <body>
     
-
     <%= render "layouts/navbar" %>
 
      <% if not @url.present?%> 
 
-     <% flash.each do |key, value| %>
-                <div class="alert alert-<%= key %>"><%= value %></div>
-                <% end %>
+       <% flash.each do |key, value| %>
+                  <div class="alert alert-<%= key %>"><%= value %></div>
+                  <% end %>
 
      <% end %>
      <!-- Navigation -->
