@@ -30,7 +30,7 @@ namespace :tops do
   scrape.reset
 
   prices.zip(images, description, brands, url).each do |prices, images, description, brands, url, |
-      Product.create(price: prices, description: description, brand: brands, image_url: images, destination_url: url, store: "Cerato Boutique", category: "tops")
+      Product.create(price: prices, description: description, brand: brands, image_url: images, destination_url: url, store: "Cerato Boutique")
     end
   end
 end
